@@ -1,1 +1,16 @@
+# Базы данных
+*.sqlite
+*.sqlite3
+*.db
 
+# Окружения и зависимости
+venv/
+.venv/
+__pycache__/
+node_modules/
+
+# Системные и IDE файлы
+.env
+.vscode/
+.idea/
+.DS_Store
