@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1246" height="725" viewBox="0 0 1246 725" role="img" aria-labelledby="title description">
+  <title id="title">QuizBox · Схема базы данных SQLite</title>
+  <desc id="description">Шесть таблиц. Викторины содержат вопросы и запускаются в игровых сессиях. Варианты привязаны к вопросам, участники к сессиям. Ответы связаны составными внешними ключами с сессией, участником, вопросом и вариантом.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 L8 4 L0 8 Z" fill="#37658b"/>
+    </marker>
+  </defs>
+  <rect width="1246" height="725" fill="#f2f6fa"/>
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" fill="#132c42">
+    <text x="40" y="46" font-size="27" font-weight="700">QuizBox · Схема базы данных SQLite</text>
+    <text x="40" y="72" font-size="15" fill="#425e73">FR-01 · Версия схемы 1 · Каждая стрелка показывает связь 1 к 0…N</text>
+    <g fill="none" stroke="#37658b" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrow)">
+      <path d="M280 264 H310 V151 H342"/>
+      <path d="M280 296 H310 V430 H342"/>
+      <path d="M582 151 H645"/>
+      <path d="M582 430 H645"/>
+      <path d="M582 481 H617 V559 H930 V424 H966"/>
+      <path d="M885 430 H915 V395 H966"/>
+      <path d="M885 151 H915 V284 H966"/>
+      <path d="M582 231 H612 V337 H966"/>
+    </g>
+    <g transform="translate(40 232)">
+      <rect width="240" height="126" rx="9" fill="#ffffff" stroke="#a1b6c7"/>
+      <path d="M9 0 H231 Q240 0 240 9 V54 H0 V9 Q0 0 9 0 Z" fill="#153c59"/>
+      <text x="14" y="22" font-size="16" font-weight="700" fill="#ffffff">quizzes</text>
+      <text x="14" y="42" font-size="13" fill="#d4e7f4">Викторины</text>
+      <text x="14" y="73" font-size="12" font-weight="700" fill="#215f8b">PK</text>
+      <text x="49" y="73" font-size="14" font-family="Consolas, monospace">id</text>
+      <text x="49" y="95" font-size="14" font-family="Consolas, monospace">title</text>
+      <text x="49" y="117" font-size="14" font-family="Consolas, monospace">created_at</text>
+    </g>
+    <g transform="translate(342 100)">
+      <rect width="240" height="170" rx="9" fill="#ffffff" stroke="#a1b6c7"/>
+      <path d="M9 0 H231 Q240 0 240 9 V54 H0 V9 Q0 0 9 0 Z" fill="#153c59"/>
+      <text x="14" y="22" font-size="16" font-weight="700" fill="#ffffff">questions</text>
+      <text x="14" y="42" font-size="13" fill="#d4e7f4">Вопросы</text>
+      <text x="14" y="73" font-size="12" font-weight="700" fill="#215f8b">PK</text>
+      <text x="49" y="73" font-size="14" font-family="Consolas, monospace">id</text>
+      <text x="14" y="95" font-size="12" font-weight="700" fill="#215f8b">FK</text>
+      <text x="49" y="95" font-size="14" font-family="Consolas, monospace">quiz_id</text>
+      <text x="49" y="117" font-size="14" font-family="Consolas, monospace">prompt</text>
+      <text x="49" y="139" font-size="14" font-family="Consolas, monospace">position</text>
+      <text x="49" y="161" font-size="14" font-family="Consolas, monospace">points</text>
+    </g>
+    <g transform="translate(645 100)">
+      <rect width="240" height="170" rx="9" fill="#ffffff" stroke="#a1b6c7"/>
+      <path d="M9 0 H231 Q240 0 240 9 V54 H0 V9 Q0 0 9 0 Z" fill="#153c59"/>
+      <text x="14" y="22" font-size="16" font-weight="700" fill="#ffffff">question_options</text>
+      <text x="14" y="42" font-size="13" fill="#d4e7f4">Варианты ответа</text>
+      <text x="14" y="73" font-size="12" font-weight="700" fill="#215f8b">PK</text>
+      <text x="49" y="73" font-size="14" font-family="Consolas, monospace">id</text>
+      <text x="14" y="95" font-size="12" font-weight="700" fill="#215f8b">FK</text>
+      <text x="49" y="95" font-size="14" font-family="Consolas, monospace">question_id</text>
+      <text x="49" y="117" font-size="14" font-family="Consolas, monospace">label</text>
+      <text x="49" y="139" font-size="14" font-family="Consolas, monospace">position</text>
+      <text x="49" y="161" font-size="14" font-family="Consolas, monospace">is_correct</text>
+    </g>
+    <g transform="translate(342 381)">
+      <rect width="240" height="170" rx="9" fill="#ffffff" stroke="#a1b6c7"/>
+      <path d="M9 0 H231 Q240 0 240 9 V54 H0 V9 Q0 0 9 0 Z" fill="#153c59"/>
+      <text x="14" y="22" font-size="16" font-weight="700" fill="#ffffff">game_sessions</text>
+      <text x="14" y="42" font-size="13" fill="#d4e7f4">Игровые сессии</text>
+      <text x="14" y="73" font-size="12" font-weight="700" fill="#215f8b">PK</text>
+      <text x="49" y="73" font-size="14" font-family="Consolas, monospace">id</text>
+      <text x="14" y="95" font-size="12" font-weight="700" fill="#215f8b">FK</text>
+      <text x="49" y="95" font-size="14" font-family="Consolas, monospace">quiz_id</text>
+      <text x="49" y="117" font-size="14" font-family="Consolas, monospace">join_code</text>
+      <text x="49" y="139" font-size="14" font-family="Consolas, monospace">status</text>
+      <text x="49" y="161" font-size="14" font-family="Consolas, monospace">created_at</text>
+    </g>
+    <g transform="translate(645 381)">
+      <rect width="240" height="148" rx="9" fill="#ffffff" stroke="#a1b6c7"/>
+      <path d="M9 0 H231 Q240 0 240 9 V54 H0 V9 Q0 0 9 0 Z" fill="#153c59"/>
+      <text x="14" y="22" font-size="16" font-weight="700" fill="#ffffff">participants</text>
+      <text x="14" y="42" font-size="13" fill="#d4e7f4">Участники</text>
+      <text x="14" y="73" font-size="12" font-weight="700" fill="#215f8b">PK</text>
+      <text x="49" y="73" font-size="14" font-family="Consolas, monospace">id</text>
+      <text x="14" y="95" font-size="12" font-weight="700" fill="#215f8b">FK</text>
+      <text x="49" y="95" font-size="14" font-family="Consolas, monospace">session_id</text>
+      <text x="49" y="117" font-size="14" font-family="Consolas, monospace">display_name</text>
+      <text x="49" y="139" font-size="14" font-family="Consolas, monospace">joined_at</text>
+    </g>
+    <g transform="translate(966 235)">
+      <rect width="240" height="236" rx="9" fill="#ffffff" stroke="#a1b6c7"/>
+      <path d="M9 0 H231 Q240 0 240 9 V54 H0 V9 Q0 0 9 0 Z" fill="#153c59"/>
+      <text x="14" y="22" font-size="16" font-weight="700" fill="#ffffff">answers</text>
+      <text x="14" y="42" font-size="13" fill="#d4e7f4">Ответы участников</text>
+      <text x="14" y="73" font-size="12" font-weight="700" fill="#215f8b">PK</text>
+      <text x="49" y="73" font-size="14" font-family="Consolas, monospace">id</text>
+      <text x="14" y="95" font-size="12" font-weight="700" fill="#215f8b">FK</text>
+      <text x="49" y="95" font-size="14" font-family="Consolas, monospace">quiz_id</text>
+      <text x="14" y="117" font-size="12" font-weight="700" fill="#215f8b">FK</text>
+      <text x="49" y="117" font-size="14" font-family="Consolas, monospace">session_id</text>
+      <text x="14" y="139" font-size="12" font-weight="700" fill="#215f8b">FK</text>
+      <text x="49" y="139" font-size="14" font-family="Consolas, monospace">participant_id</text>
+      <text x="14" y="161" font-size="12" font-weight="700" fill="#215f8b">FK</text>
+      <text x="49" y="161" font-size="14" font-family="Consolas, monospace">question_id</text>
+      <text x="14" y="183" font-size="12" font-weight="700" fill="#215f8b">FK</text>
+      <text x="49" y="183" font-size="14" font-family="Consolas, monospace">option_id</text>
+      <text x="49" y="205" font-size="14" font-family="Consolas, monospace">awarded_points</text>
+      <text x="49" y="227" font-size="14" font-family="Consolas, monospace">submitted_at</text>
+    </g>
+    <g transform="translate(40 582)">
+      <rect width="1166" height="117" rx="9" fill="#ffffff" stroke="#a1b6c7"/>
+      <text x="16" y="26" font-size="15" font-weight="700">Составные внешние ключи в answers</text>
+      <text x="726" y="26" font-size="14" fill="#425e73">PK — первичный ключ · FK — внешний ключ</text>
+      <g font-size="13" font-family="Consolas, monospace">
+        <text x="16" y="56">(quiz_id, session_id) → game_sessions(quiz_id, id)</text>
+        <text x="16" y="80">(session_id, participant_id) → participants(session_id, id)</text>
+        <text x="620" y="56">(quiz_id, question_id) → questions(quiz_id, id)</text>
+        <text x="620" y="80">(question_id, option_id) → question_options(question_id, id)</text>
+      </g>
+    </g>
+  </g>
+</svg>
