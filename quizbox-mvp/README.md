@@ -25,6 +25,10 @@
 2. Установить зависимости: `pip install -r requirements.txt` *(или `npm install`)*
 3. Запустить локальный сервер: `uvicorn backend.main:app --host 0.0.0.0 --port 8000` *(или `npm start`)*
 
+## База данных SQLite
+
+[Схема БД и миграции FR-01](docs/FR-01-database.md)
+
 ##  Правила работы с Git (Git Flow)
 * **`main`** — стабильная ветка, прямые коммиты запрещены.
 * **Рабочие ветки** создаются от `main` под каждую задачу: `feature/FR-01-описание`, `fix/RISK-04-описание`, `docs/DOC-01-описание`.
