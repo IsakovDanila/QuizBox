@@ -6,7 +6,7 @@ from typing import Any
 from fastapi import FastAPI
 
 from .network import local_ipv4_addresses
-
+from .quiz_api import router as quiz_router
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -28,6 +28,7 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+app.include_router(quiz_router)
 
 @app.get("/")
 async def root() -> dict[str, str]:
