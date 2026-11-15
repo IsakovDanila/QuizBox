@@ -16,7 +16,7 @@
 * **Тагунов К. Р.** (ЦИС-48) — Инженер по тестированию (QA)
 
 ##  Стек технологий и запуск проекта
-* **Backend:** Python (FastAPI) / Node.js (Express) *(оставьте ваш вариант)*
+* **Backend:** Python (FastAPI) / Node.js (Express)
 * **База данных:** SQLite
 * **Frontend:** HTML5, CSS3, JavaScript
 
